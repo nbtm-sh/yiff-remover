@@ -9,7 +9,9 @@ def get_files(directory):
     return files
 
 def get_file_hash(file):
-    file_content = open(file, 'rb').read()
+    file_handler = open(file, 'rb')
+    file_content = file_handler.read()
+    file_hander.close()
     md5_sum = hashlib.md5(file_content)
     return md5_sum.hexdigest() 
 
